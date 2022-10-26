@@ -1,0 +1,20 @@
+[ 자바관련용어 ]
+
+1. JDK (Java Development Kit)
+-> Java를 사용하기 위한 필요기능을 모두 갖춘 파일킷
+-> JRE도 포함
+
+2. JRE(Java Runtime Environment)
+-> 자바가상머신(JVM), 자바클래스 라이브러리,
+자바명령 포함하는 실행 팩키지
+
+3. JVM(Java Virtual Machine)
+- 자바 가상머신으로 바이트코드(class)를 OS에 특화된
+코드로 변환하여 실행함!
+- 어떤 OS환경에서도 동일한 Java소스코드를 실행하게함!
+
+4. 자바 컴파일(Java Compile)
+- 자바문법으로 코딩한 .java파일을 .class파일 즉, 기계어로 변환하는
+과정을 컴파일이라고 함!
+- 수동컴파일은 나의 자바파일을 javac 라는 명령어로 파일명을 뒤에쓰면
+파일.java -> 파일.class 로 변환됨!

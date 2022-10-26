@@ -1,0 +1,151 @@
+[ DB 테이블 만들기 ]
+
+1. 테이블을 만들 DB를 선택한다!
+2. 테이블 쿼리를 구성한다.
+
+CREATE TABLE 테이블명(
+    컬럼명 데이타형 [널여부 자동증가],
+    컬럼명 데이타형,
+    컬럼명 데이타형,
+   [primary key (컬럼명)]
+);
+
+-> 각 컬럼명은 데이터가 종류별로 저장되는 공간이다
+-> 각 컬럼은 데이터형이 정해져 있다!
+-> 옵션: 널여부 -> 안쓰면 null값 허용, 
+		not null 이라고 쓰면 필수항목
+-> 옵션: 자동증가 -> auto_increment 이것을 쓰면 자동숫자증가됨
+	이것을 사용할 경우 int형을 쓰고 not null로 필수항목으로
+	만들어야 한다!
+
+-> 만약 DB 데이터의 레코드가 각각 유일한 데이터로 만들려면
+기본키(primary key)를 설정해야하며 보통은 자동증가 컬럼을
+기본키로 설정한다!
+
+예시문)
+
+CREATE TABLE `friends`(
+   fnum int NOT null AUTO_INCREMENT,
+    fname varchar(20),
+    ftel char(11),
+    faddr varchar(200),
+    fmsg text(1000),
+    fdate timestamp,
+    PRIMARY KEY (fnum)
+);
+
+-> 백틱(`)을 사용해도 동일하다!
+-> 다만 백틱을 사용하는 목적은 키워드와 같은 이름 등
+해석상 에러가 발생할 수 있는 소지를 미리 막는데 있다!
+
+CREATE TABLE `friends`( 
+    `fnum` int NOT null AUTO_INCREMENT, 
+    `fname` varchar(20), 
+    `ftel` char(11), 
+    `faddr` varchar(200), 
+    `fmsg` text(1000), 
+    `fdate` timestamp, 
+    PRIMARY KEY (`fnum`) 
+);
+
+추가예시)
+CREATE TABLE `saveMoney`(
+	`idx` int NOT null AUTO_INCREMENT,
+    `name` varchar(50) NOT null,
+    `address` varchar(200),
+    `gender` char(1) NOT null,
+    `birth` date,
+    `time` timestamp,
+    PRIMARY KEY (`idx`)
+);
+
+
+
+[ 데이터형 ]
+1. 숫자형 : int -> 범위(-21억~21억)
+    - 만약 컬럼생성시 int라고만 쓰면 
+    기본 자릿수가 11자리로 잡혀서 int(11)로 표기된다.
+    이는 10자리면 21억개의 숫자 자리수이지만 
+    맨앞에 한자리 0을 넣어주는 것을 기본으로 설계되어서
+    11자리로 표기되는 것이다
+    만약 자릿수를 제한하려면 생성시에
+    int(자릿수)로 만들면 된다!
+    예) int(6) -> 10만자리수 까지
+    
+    - 만약 마이너스 범위(-21억)을 사용하지 않고
+    양수만 쓰고 싶다면 반대범위가 낭비 되므로
+    키워드 unsigned 를 사용하여 양수만 사용하여
+    두배수를 사용할 수 있다~! (21억*2=42억)
+    
+    
+2. 문자형 :
+	1) char(byte개수) -> 정한 크기만큼 공간차지
+	- char 는 character (문자)에서 나온말
+	2) varchar(byte개수) -> 정한 크기보다 적은경우 작아짐
+	-> 공간 절약을 위한 데이터형이어서 많이쓰임!
+	- varchar 는 variable character (변하는 문자) 에서 나온말
+	3) text(byte개수)
+	-> 65,535까지 사용가능
+	-> 예컨데 text(4000) 영문자같은 경우 4000글자지만
+	한글 같은 경우 2byte이므로 2000글자만 들어간다~!
+3. 날짜형: 
+	1) date -> 날짜형식은 YYYY-MM-DD(년-월-일)
+		-> 한계는 "1000-01-01" ~ "9999-12-31"
+	2) datetime -> 날짜형식은 YYYY-MM-DD hh:mm:ss
+				(년-월-일 시:분:초)
+	3) timestamp -> 자동으로 기록되는 날짜시간 형식
+		-> 입력이 별도로 필요없다!
+		-> 날짜형식은 datatime과 동일함!
+        
+4. 키워드:
+    1) not null -> 데이터 빈값 불허용
+    (이 키워드를 안쓰면 널값 허용)
+    -> 널값? 데이터 레코드 입력시 컬럼을 비워놓는것
+    2) AUTO_INCREMENT -> 자동증가(숫자1씩증가)
+    3) unsigned -> 숫자의 음수값 사용안하고
+                양수로 숫자값 사용함
+    4) default -> 데이터 입력안할 경우 기본값 넣기
+        - 실제로 사용시 -> default 기본값
+    5) primary key -> 기본키(유일키포함)
+        -> 사용법: 컬럼 정의시 뒤쪽에 쓰거나
+        맨 아래에서 본 키워드 뒤에 소괄호 안에 키지정
+        예) `idx` int primary key
+            또는
+            primary key (`idx`,`email`)
+        -> 기본키는 여러개를 묶어서 그룹지정가능함
+
+
+[ 테이블 지우기 ]
+-> drop table `테이블명`
+
+- 지울때 mysql 어드민 sql모드에서 백틱을 쓰면 
+테이블명 자동완성 지원!
+
+[ 테이블 컬럼 추가하기 ]
+
+ALTER TABLE `테이블명`
+ADD `컬럼명` 데이터형;
+
+예시)
+ALTER TABLE `friends`
+ADD `age` int;
+
+[ 테이블 컬럼 지우기 ]
+
+ALTER TABLE `테이블명`
+DROP COLUMN `컬럼명`;
+
+예시)
+ALTER TABLE `friends`
+DROP COLUMN `age`;
+
+
+[ 테이블 컬럼 수정하기(데이터형) ]
+
+ALTER TABLE `테이블명`
+MODIFY COLUMN `컬럼명` 데이터형;
+
+예시)
+ALTER TABLE `friends`
+MODIFY COLUMN `fname` varchar(100);
+

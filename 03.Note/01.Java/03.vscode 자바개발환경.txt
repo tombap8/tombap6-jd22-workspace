@@ -1,0 +1,64 @@
+[ vscode 자바개발환경 설정 ]
+
+1. 먼저 JDK를 설치후 환경변수 설정한다!
+
+2. vscode Java 확장 팩키지를 설치한다
+- 마켓플레이스에서 "Java"라고 검색
+Extension Pack for Java 이것을 설치!
+
+3. 자바 프로젝트를 실행한다
+1) F1키누름 : 검색어에 "java project"
+-> "Create Java Project..." 클릭
+2) "No build tools" 선택
+3) 상위지정폴더 선택(생성)
+4) 프로젝트 명을 쓰면 새로운 자바프로젝트가
+vscode 새창으로 열림!!!
+
+4. 자바파일 생성 후 기본 실행하기
+- 기본자바파일은 내부 클래스명과 동일한 파일명을 쓴다!
+- 클래스는 반드시 대문자로 시작한다!
+- 따라서 파일명도 대문자로 클래명과 동일하게 작성함!
+- Java Run | Debug 버튼클릭 -> 컴파일함!
+-> 자바실행 단축키 : ctrl+F5
+-> 자바 디버깅 단축키 : F5
+-> bin폴더가 없다면 만들어주면서 class파일이 생김!
+-> 결과는 터미널창에 출력!
+(기본적으로 터미널 창은 control+`(백틱))
+
+[ 처음 자바실행시 inlay Hints가 
+적용되어서 앞에 x:이런표시 뜸 ]
+-> 없애는 방법
+
+1) F1키 누르고 json파일 검색 
+-> 기본설정 제이슨 파일 선택(defaultSettings.json)
+(수정은 못하고 검색만됨!)
+
+여기서 "inlay"검색!
+"editor.inlayHints.enabled": "on" 복사!!!
+
+2) F1키 누르고 json파일 검색 
+-> 사용자설정열기(settings.json)
+"inlay"를 검색해서 없으면
+
+"editor.inlayHints.enabled": "off",
+넣고 값을 "off"로 덮어쓴다!
+
+
+[ 자바 class경로 지정 환경설정하기 ]
+1. F1키 누르고 검색 "java config"
+-> JAVA Configure Classpath 를 선택(클릭!)
+
+2. 클래스 경로 지정 페이지 보임!
+
+Sources -> 원소스인 java파일이 있는 곳
+Path -> 아니면 X를 누르고 지운후 add로 추가함!
+
+Output -> class를 생성하여 출력하는 곳 지정!
+Browse를 클릭하여 경로를 잡아준다!
+
+(주의: 경로는 프로젝트 루트로 부터 잡히는 경로이므로
+만약 루트가 바뀌면 다시 설정필요!)
+-> 루트는 최상위 폴더!
+
+[ 일반적으로 뭔가 로딩이 안될때 ]
+-> 모든 vscode를 닫았다가 연다!!!

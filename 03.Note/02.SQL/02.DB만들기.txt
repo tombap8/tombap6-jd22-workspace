@@ -1,0 +1,48 @@
+[ DB만들기 ]
+
+1. 새로운... 버튼 클릭 또는 "데이터베이스"탭 클릭
+2. DB명을 쓰고 데이터정렬방식을 "utf8_general_ci" 선택한다
+ -> 이것을 선택하는 이유는 가장 보편적인 포멧이기때문
+	(즉, 2byte문자 처리 등이 용이함!)
+3. 만들기.... 버튼 클릭!
+4. SQL로 DB만들때:
+
+CREATE DATABASE `디비명` 
+DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+[ DB 문자셋 변경하기 ]
+
+ALTER DATABASE `디비명` 
+DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+
+[ SQL 은 크게 2가지분류! ]
+
+1. DDL(데이터 정의언어) : 데이터 저장 구조 묘사
+ -> CREATE TABLE, CREATE DATABASE...
+
+2. DML(데이터 조작언어) : 저장된 데이터 가공
+ -> INSERT, UPDATE, DELETE, SELECT...
+
+
+[ 가장 중요한 SQL 명령 중 일부 ]
+
+-> DML
+SELECT- 데이터베이스에서 데이터 추출
+UPDATE- 데이터베이스의 데이터를 업데이트합니다.
+DELETE- 데이터베이스에서 데이터를 삭제합니다.
+INSERT INTO- 데이터베이스에 새 데이터를 삽입합니다.
+
+-> DDL
+CREATE DATABASE- 새 데이터베이스 생성
+ALTER DATABASE- 데이터베이스 수정
+DROP DATABASE- 데이터베이스를 삭제
+CREATE TABLE- 새 테이블 생성
+ALTER TABLE- 테이블 수정
+DROP TABLE-테이블 삭제
+CREATE INDEX-색인 생성 (검색 키)
+DROP INDEX- 인덱스 삭제
+
+
+[ DB SQL사용하기 ]
+1. 실행을 Root(127.0.0.1)에서 SQL실행을 해야한다!
