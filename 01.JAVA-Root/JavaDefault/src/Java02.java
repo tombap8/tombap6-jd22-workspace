@@ -1,3 +1,4 @@
+// Java02.변수와 데이터형
 public class Java02 {
     public static void main(String[] args) {
         /* [ 자바 변수 ]
@@ -164,11 +165,40 @@ public class Java02 {
             System.out.println("거듭제곱 출력: \n"+ f1 + "\n" + d1);
             // \(역슬래쉬)n 은 줄바꿈기호
 
+            System.out.println();
+            // prinln()만 호출하면 엔터만적용
+            System.out.println("[불린값 출력]");
 
+            // 불린값 (ture / false)
+            // if문이나 조건문에 사용됨!
+            boolean isJavaFun = true;
+            boolean isFishTasty = false;
+            System.out.println("자바는 재밌나?"+isJavaFun);
+            // 삼항연산자 -> 비?집:놀이동산
+            System.out.println("자바는 재밌나?"+(isJavaFun?"응":"아니"));
+            System.out.println("물고기 맛있나?"+isFishTasty);
+            System.out.println("물고기 맛있나?"+(isFishTasty?"매우":"별루"));
 
+            // char 데이터 유형은 단일문자를 저장
+            // 문자는 'A' 또는 'c'와 같이 작은따옴표 사용필수!
+            System.out.println();
+            System.out.println("[char 값 출력]");
+            char myGrade = 'B';
+            System.out.println("나의 학점은 "+myGrade);
 
+            // 한글과 같은 2byte 문자도 한글자만 출력
+            char myMedal = '금';
+            System.out.println("나의 메달은 "+myMedal);
 
-
+            // 아스키코드를 사용하여 출력가능!
+            // char형에 아스키코드에 해당하는 숫자를 넣으면 한글자 출력!
+            // 아스키코드 참조:
+            // https://www.w3schools.com/charsets/ref_html_ascii.asp
+            System.out.println();
+            char myVar1 = 64, myVar2 = 66, myVar3 = 67;
+            System.out.println("아스키64는 "+myVar1);
+            System.out.println("아스키66는 "+myVar2);
+            System.out.println("아스키67는 "+myVar3);
 
             /********************************************
 
@@ -201,5 +231,44 @@ public class Java02 {
             기본이 아닌 유형의 예로는 
             Strings / Arrays / Classes / Interface 등이 있음
           ********************************************/
+
+          /* 
+           [ 데이터 형변환 ]
+		
+            형변환은 기본 데이터 유형의 값을 다른 유형에 할당하는것
+            Java에는 두 가지 유형의 캐스팅이 있음
+
+            1.업캐스팅 (자동) 
+            - 더 작은 유형을 더 큰 유형 크기로 변환
+            byte-> short-> char-> int-> long-> float->double
+
+            2.다운캐스팅 (수동) 
+            - 큰 유형을 작은 크기 유형으로 변환
+            double-> float-> long-> int-> char-> short->byte
+           */
+
+           // 형변환
+           // 1. 업캐스팅 : 자동형변환됨!!!
+           int myInt = 9;
+           double myDouble = myInt;
+
+           System.out.println();
+           System.out.println("형변환:업캐스팅");
+           System.out.println("int값:"+myInt);
+           System.out.println("int를 double로:"+myDouble);
+
+           // 다운캐스팅 : 할당할 변수타입과 같은 타입을 소괄호에 씀!
+           // 타입 변수 = (변환타입) 변수
+           // -> 소실되는 값이 있다~!
+           double myDouble2 = 9.78d;
+           int myInt2 = (int)myDouble2;
+           System.out.println("형변환:다운캐스팅");
+           System.out.println("double값:"+myDouble2);
+           System.out.println("double을 int로:"+myInt2);
+
+
+
+
+
     }
 }

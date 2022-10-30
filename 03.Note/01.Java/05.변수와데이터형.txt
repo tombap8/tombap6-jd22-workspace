@@ -85,3 +85,19 @@ Java에 의해 정의되지 않음( 제외 String).
 
 기본이 아닌 유형의 예로는 
 Strings / Arrays / Classes / Interface 등이 있음
+
+
+
+[ 데이터 형변환 ]
+		
+형변환은 기본 데이터 유형의 값을 다른 유형에 할당하는것
+
+Java에는 두 가지 유형의 캐스팅이 있음
+
+1.업캐스팅 (자동) 
+- 더 작은 유형을 더 큰 유형 크기로 변환
+byte-> short-> char-> int-> long-> float->double
+
+2.다운캐스팅 (수동) 
+- 큰 유형을 작은 크기 유형으로 변환
+double-> float-> long-> int-> char-> short->byte
