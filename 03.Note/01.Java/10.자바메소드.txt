@@ -1,0 +1,109 @@
+[자바 메소드]
+
+    1. 메서드 는 호출될 때만 실행되는 코드 블록이다
+    2. 매개변수로 데이터를 메소드에 전달한다.
+    3. 메소드는 특정 작업을 수행하는 데 사용되며 함수라고도 한다.
+    4. 메서드를 쓰는 이유: 코드의 재사용
+
+[메소드 생성]
+
+    메소드는 클래스 내에서 선언함. 
+    메서드 이름과 괄호 () 로 정의함. 
+    자바에는 내장된 메서드가 있지만 
+    별도의 사용자정의 메서드를 만들 수 있다.
+
+예)
+    public class Main {
+    static void myMethod() {
+        // code to be executed
+    }
+    }
+
+(메서드 설명)
+    myMethod() - 메서드명
+    static - 메서드가 Main 클래스에 속하고 Main 클래스의 개체가 아님을 의미
+    void - 메서드의 반환 값 없음
+
+[메서드 호출]
+
+   메소드명();
+
+예)
+    public class Main {
+    static void myMethod() {
+        System.out.println("나는 개발자다!");
+    }
+
+    public static void main(String[] args) {
+        myMethod(); // 호출시 myMethod메서드 기능수행
+        myMethod();
+        myMethod(); // 호출한 만큼 기능수행함!
+    }
+    }
+
+[자바 메소드 매개변수]
+
+    - 매개변수 및 인수
+    정보는 매개변수로 메소드에 전달함
+    매개변수는 메서드 내에서 지역변수임
+
+    매개변수는 메서드 이름 뒤에 괄호 안에 지정함
+    원하는 만큼 매개변수를 추가할 수 있으며 쉼표로 구분
+
+예)
+
+    public class Main {
+    static void myMethod(String fname) {
+        System.out.println(fmily + "씨 가문");
+    }
+
+    public static void main(String[] args) {
+        myMethod("김");
+        myMethod("이");
+        myMethod("박");
+    }
+    }
+    // 김씨 가문
+    // 이씨 가문
+    // 박씨 가문
+
+[ 다수의 매개변수 ]
+
+    public class Main {
+        static void myMethod(String name, int age) {
+            System.out.println(name + "의 나이는 " + age +"살");
+        }
+
+        public static void main(String[] args) {
+            myMethod("요심", 5);
+            myMethod("조령", 8);
+            myMethod("코코", 31);
+        }
+    }
+
+    // 요심의 나이는 5살
+    // 조령의 나이는 8살
+    // 코코의 나이는 31살
+
+
+[반환 값]
+    void키워드 : 반환값없음
+    기본 데이터 유형(예: int, char등)을 void대신 사용하면
+    반환값이 있음과 반환값의 유형을 지정하는 것임
+
+예)
+
+    public class Main {
+        static int myMethod(int x, int y) {
+            return x + y;
+        }
+
+        public static void main(String[] args) {
+            int z = myMethod(900,100);
+            System.out.println(z);
+        }
+    }
+    // 출력 1000
+
+[If...Else가 있는 메서드]
+메서드 내에서 if...else문 을 사용하는 것이 일반적임.
