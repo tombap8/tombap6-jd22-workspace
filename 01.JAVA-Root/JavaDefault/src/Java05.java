@@ -1,4 +1,6 @@
-import module1.*;
+import java.util.Scanner;
+
+import module1.Jmo1;
 public class Java05 {
     public static void main(String[] args) {
         myFn();
@@ -10,6 +12,15 @@ public class Java05 {
         Java05 j05 = new Java05();
         var print = j05.myStr(100, "명이야!");
         System.out.println(print);
+
+        // try문으로 스캐너 감싸준다.
+        // 자동 import는 (alt+shift+O:알쉬오~~~!)
+        try (Scanner myObj = new Scanner(System.in)) {
+            System.out.println("Enter username");
+
+            String userName = myObj.nextLine();
+            System.out.println("Username is: " + userName);
+        }
     }
     static void myFn(){
         System.out.println(333);
@@ -20,4 +31,5 @@ public class Java05 {
     private String myStr(int a, String b){
         return a+b;
     }
+
 }
