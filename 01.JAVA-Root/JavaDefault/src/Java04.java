@@ -207,6 +207,19 @@ public class Java04 {
             // }
             // while (조건문);
 
+            // 무지개 색을 배열 변수에 넣고 for문 돌리기
+            String[] rainbow = {"빨강","주황","노랑","초록","파랑","남","보라"};
+            System.out.print("무지개색 종류는 순서대로 ");
+            for(int i=0; i<rainbow.length;i++){
+                System.out.print(rainbow[i]+"색");
+                if(i==rainbow.length-1){
+                    System.out.print(" 입니다!\n\n");
+                }
+                else{
+                    System.out.print(", ");
+                }
+            } ////////// for //////////////////
+
             // 7. for문
             // - 지정된 횟수 만큼 코드를 반복실행하여 제어함
 
@@ -217,6 +230,25 @@ public class Java04 {
             // (1) 시작값 : 변수선언과 시작값 할당
             // (2) 한계값 : 변수의 한계값 설정
             // (3) 증감 : 변수의 증가 / 감소
+
+            // 배열의 전체 선수 명단 중 이번 경기에 나갈 선수만 표시하기(continue)
+            // 예비선수는 제외하기(break)
+            // 백넘버 표시하기
+            String player[] = {"김기춘","홍서범","하준상","이종학","예비:이병준","예비:서이룡"};
+            // int backNum[] = {102,305,112,854,641,377};
+
+            System.out.println("#축구한국 대표팀 선수전체명단:");
+            for(String mem : player){
+                System.out.println(mem);
+            }
+            System.out.println();
+            System.out.println("#올림픽 경기에 참가할 축구선수 명단:");
+            for(String mem : player){
+                if(mem=="하준상") continue;
+                if(mem=="예비:이병준") break;
+                System.out.println(mem);
+            }
+
 
             // 8. for-each 문
             // - 배열값 만큼 자동으로 변수에 할당하면 실행코드 반복 제어함
