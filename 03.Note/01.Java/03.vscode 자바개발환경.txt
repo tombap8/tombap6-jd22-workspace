@@ -62,3 +62,6 @@ Browse를 클릭하여 경로를 잡아준다!
 
 [ 일반적으로 뭔가 로딩이 안될때 ]
 -> 모든 vscode를 닫았다가 연다!!!
+
+[ 자동 줄맞춤 셋팅 : alt+shift+F (알쉬에프~~~!) ]
+Language Support for Java(TM) by Red Hat 에 의한 포멧팅!
