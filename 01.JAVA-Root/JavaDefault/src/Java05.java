@@ -20,6 +20,8 @@ public class Java05 {
 
             String userName = myObj.nextLine();
             System.out.println("Username is: " + userName);
+            if(userName.equals("공유")) System.out.println("대표작:도깨비");
+            else if(userName.equals("김수현")) System.out.println("대표작:해품달");
         }
     }
     static void myFn(){
