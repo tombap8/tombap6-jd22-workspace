@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Java04 {
@@ -151,6 +152,19 @@ public class Java04 {
             // }
 
             System.out.println();
+            System.out.println("지금 빵을 몇개 먹고싶은가? \n개수를 숫자로 써라! 그럼 줄께!^^");
+            System.out.print("#빵개수: ");
+            int bread = myObj.nextInt();
+            System.out.println();
+
+            int bnum = 0;
+            while (bnum < bread) {
+                bnum++;
+                System.out.print("빵 ");
+            }
+
+            System.out.println();
+            System.out.println();
 
             // 5. while문
             // - 조건이 true인 동안 반복실행 코드를 제어함
@@ -159,6 +173,62 @@ public class Java04 {
             // // 실행코드
             // }
 
+            // 세자리마다 콤마찍기 방법:
+            // DecimalFormat 클래스
+            // 생성: DecimalFormat 변수 = new DecimalFormat(형식);
+            // 사용: 변수.format(사용할변수)
+            DecimalFormat df = new DecimalFormat("###,###");
+
+            System.out.println("당신의 월급은 얼마입니까?");
+            int myPay = myObj.nextInt();
+            System.out.println(myPay);
+            System.out.println("월급: " + df.format(myPay) + "원");
+            System.out.println();
+
+            System.out.println("당신은 당신의 회사에서 몇번이나 월급을 받고 싶나요?");
+            int payNum = myObj.nextInt();
+            System.out.println("월급횟수: " + payNum);
+            System.out.println();
+
+            int payCycle = 1;
+
+            do {
+                System.out.println("월급 " + df.format(myPay) + "원 *" +
+                        payCycle + "번 받고 \n총액: " + df.format(myPay * payCycle) + "원");
+                payCycle++;
+            } while (payCycle <= payNum); // 세미콜론 필수!!!(특이함!)
+
+            System.out.println();
+
+            // 6. Do/While문
+            // - 먼저 코드를 실행후 반복실행 여부를 제어함
+            // do {
+            // // 실행코드
+            // }
+            // while (조건문);
+
+            // 7. for문
+            // - 지정된 횟수 만큼 코드를 반복실행하여 제어함
+
+            // for (시작값; 한계값; 증감) {
+            // // 실행코드
+            // }
+
+            // (1) 시작값 : 변수선언과 시작값 할당
+            // (2) 한계값 : 변수의 한계값 설정
+            // (3) 증감 : 변수의 증가 / 감소
+
+            // 8. for-each 문
+            // - 배열값 만큼 자동으로 변수에 할당하면 실행코드 반복 제어함
+
+            // for (타입선언변수 : 배열변수명) {
+            // // 실행코드
+            // }
+
+            // 9. for문 중단,계속 옵션 키워드
+            // (1) continue 빼고 계속
+            // (2) break 중단
+
         } //////////// 스캐너 영역 ///////////////////
           // catch문
         catch (Exception e) {
@@ -166,34 +236,5 @@ public class Java04 {
             System.out.println("꼭 숫자로 입력바랍니다~!\n다시갑니다!\n");
         }
 
-        // 6. Do/While문
-        // - 먼저 코드를 실행후 반복실행 여부를 제어함
-
-        // do {
-        // // 실행코드
-        // }
-        // while (조건문);
-
-        // 7. for문
-        // - 지정된 횟수 만큼 코드를 반복실행하여 제어함
-
-        // for (시작값; 한계값; 증감) {
-        // // 실행코드
-        // }
-
-        // (1) 시작값 : 변수선언과 시작값 할당
-        // (2) 한계값 : 변수의 한계값 설정
-        // (3) 증감 : 변수의 증가 / 감소
-
-        // 8. for-each 문
-        // - 배열값 만큼 자동으로 변수에 할당하면 실행코드 반복 제어함
-
-        // for (타입선언변수 : 배열변수명) {
-        // // 실행코드
-        // }
-
-        // 9. for문 중단,계속 옵션 키워드
-        // (1) continue 빼고 계속
-        // (2) break 중단
     }
 }
