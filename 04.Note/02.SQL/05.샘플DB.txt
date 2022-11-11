@@ -1,0 +1,21 @@
+[ 샘플 DB 설치하기 ]
+
+1. North Wind 라는 샘플 DB 설치하기
+
+2. Northwind DB소개
+- MS Access 프로그램의 기본 DB임 (2010년버전)
+- 설치 기본형은 MySQL용임
+- Northwind 는 고객,주문,재고,공급업체,배송 등의 
+    소규모 비지니스용 DB임
+
+3. 구글 검색으로 Northwind 쿼리문 찾기
+-> "mysql northwind sample database" 로 검색
+-> 결과: 첫번째 결과링크 -> dalers/mywind... 깃허브 사이트
+-> northwind.sql : 테이블 생성 쿼리문
+-> northwind-data.sql : 데이터 삽입 쿼리문
+
+4. 쿼리문을 메인 SQL에서 실행하면 "northwind" DB가 만들어지고
+거기에 각 테이블이 생성된다!
+
+-> [ northwind DB 깃허브 ]
+https://github.com/dalers/mywind

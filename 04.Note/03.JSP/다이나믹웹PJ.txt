@@ -1,0 +1,53 @@
+[Dynamic Web Project의 폴더구조]
+
+ 
+
+1. WebContent
+HTML이나 JSP와 같이 컴파일 되지 않아도 되는 파일들
+
+[하위폴더]
+
+(1) META-INF (meta information)
+- 읽어야하는 자원에 대한 정보를 가지고 있는 파일을 배치
+- 웹과 관련없는 데이터도 여기에 저장함
+ex) Connection Pool을 이용하는 경우, 
+미리 연결해야할 DB에 대한 정보설정 등
+(임의로 정의한 환경변수는 컴파일 될때 자동으로 로딩하지 않으므로
+web.xml에 기록해야함!)
+
+
+(2) WEB-INF (web information)
+- 웹과 관련된 정보를 저장함
+- 프로젝트의 환경 설정 파일저장
+- Web.xml 파일이 반드시 있어야함
+- 프로젝트웹에서 중요한 파일들이 노출되지 않도록 만든 폴더임
+ (따라서 WEB-INF 디렉토리 하단에 jsp 파일을 넣으면, 
+ url로 해당 jsp 파일에 직접 접근할 수 없다!)
+- 현업에서는 브라우저에서 url로 jsp 파일 등을 직접 요청하는 것을 제한하는 것이 보통이기 때문에 jsp 파일들은 WEB-INF 폴더 안에 위치함.
+(정책상 jsp 파일에 직접 접근하지 못하게 할 때 자주 사용)
+
+
+[ WEB-INF 하위폴더 ]
+
+1) lib
+- jdbc와 같은 jar파일이 위치함
+2) Java Resources
+- 자바 소스 전용저장소
+- 하위 폴더 : src
+    -- java 파일들을 저장
+    -- 여기의 java파일만 컴파일함
+    -- WebContent에서 참조 실행함
+
+
+[ Web.xml 은 무엇인가? ]
+
+1. 만약없다면 프로젝트에서 오른쪽 버튼하여 아래 메뉴로 생성한다.
+Java EE Tools -> Generate Deployment Descriptor sub 
+
+
+2. WEB.XML은 무엇인가?
+1)배포 서술자 (Deployment)라고도 불리움
+2) jsp나 Servlet을 위한 설정 파일을 담당하는 역할
+3)브라우저가 실행될 때, 반드시 읽고 지나감
+4)단 하나만 만들것!
+ 

@@ -1,0 +1,48 @@
+[ 이클립스 설치 및 프로젝트 생성 ]
+
+1. 다운로드 받기
+https://www.eclipse.org/downloads/packages/release/2020-09/r
+
+2. exe로 설치
+-> 선택: 두번째 
+Eclipse IDE for Enterprise Java and Web Developers 
+
+3. 실행하기 : LAUNCH
+-> 작업공간 설정하기 : workspace
+
+4. 다이나믹 웹 프로젝트 생성하기
+-> File > Dynamic Web Project 선택
+-> 프로젝트명 넣고 finish
+
+5. 실행서버 톰캣 연결하기!
+-> 이클립스에서 Server 패널 꺼내기
+-> Window > Show view > Servers 선택!
+
+-> 등록된 서버확인(완전삭제가능)
+Window > Preference > Server > Runtime Environment
+
+Server에 생성된 서버표시자를
+더블클릭후
+overview 화면에서
+포트번호를 셋팅한다!
+1) Tomcat admin port -> 8090
+2) HTTP/1.1 port -> 8084
+-> 두가지를 서로 다르게 셋팅함(저장!)
+-> 서버 start시에 에러가 안남!
+
+
+6. 환경설정 (Window > Preference)
+
+(1) 테마변경 
+General > Apprence -> 테마(Dark)
+
+(2) UTF-8 인코딩 설정 변경하기
+-> 이클립스를 설치하면 windows Korea 이므로 Euc-kr
+-> 1. General > Workspace 를 클릭
+    (Text file Encoding) -> other-> utf-8
+-> 2. Web > CSS files + HTML files + JSP files
+    -> utf-8
+
+(3) 외부 브라우저 띄우기 설정(크롬브라우저)
+-> General > Web Browser 
+-> Chrome 체크!(use External web browser 체크!)
