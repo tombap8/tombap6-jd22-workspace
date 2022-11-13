@@ -11,3 +11,7 @@ public class Jmo1 {
         System.out.println("스페셜이양~!");
     }
 }
+
+class JJJ{
+    public void myFn(){}
+}
