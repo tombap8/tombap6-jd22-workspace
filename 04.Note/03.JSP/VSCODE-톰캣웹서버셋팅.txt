@@ -1,0 +1,76 @@
+********************************
+[ VSCODE - 톰캣웹서버 셋팅하기 ]
+********************************
+
+[1.톰캣서버설치]
+
+-> 톰캣 서버 설치형으로 다운로드 후 exe파일을 실행하여 톰캣서버를 설치한다.
+9버전으로 다운로드!
+https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.68/bin/apache-tomcat-9.0.68.exe
+
+-> 톰캣서버 관리패널 : 트레이에 있음!
+
+
+[2. 서버설정 파일 수정하기]
+
+(1) 수정파일 : server.xml
+위치 -> C:\Program Files\Apache Software Foundation\Tomcat 9.0\conf
+
+(2) 수정내용 :
+
+    1) Host태그쪽에 보면 Valve태그가 있는데 바로위에 Context라는 태그를 추가
+    <Context path="" docBase="JSP작업을 할 위치" workDir="컴파일class위치"></Context>
+
+    + 컴파일된 class 파일 위치를 추가해 준다. 
+    (폴더는 별도로 만들지 않아도 Tomcat 실행시, 서비스 페이지 호출시에 자동으로 생성됨)
+    workDir="d:\solution\jsp\class"
+
+    2) Service 태그 바로 아래 첫번째 Connector의 포트값을 8080 기본에서 80으로 변경
+    <Connector port="80" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443"/>
+
+    3) 서버를 여러개의 포트로 작동하게 설정할 수 있다.
+     <Service name="Catalina2">...</Service>
+     서비스 태그요소를 여러개 만들 수있고 이름을 다르게 준다.
+     내부에 위의 1)번과 2)번을 설정하고 포트번호를 다르게 설정한다.
+
+
+[3.MySQL Jar파일 넣기]
+
+3. MySQL 서버를 사용하기 위한 mysql jar 파일을 다운로드 후 
+http://www.java2s.com/Code/Jar/m/Downloadmysqlconnectorjar.htm
+MySQL 서버폴더 하위에 lib폴더에 넣어준다
+-> (중요!)이것을 넣어야 JSP에서 DB연결을 할 수 있다!!!
+
+
+[4.VSCODE에 확장 프로그램 설치하기]
+
+(1) JSP 확장자 사용을 위해 다음의 확장 프로그램을 설치한다!
+->>> Java Server Pages(JSP) - 유지보수중단 되었으나 JSP로 유일함!
+
+(2) 추가 변경 vscode 사용자 셋팅 JSON설정
+
+    1) F1 -> 사용자 설정열기(JSON)
+
+    2) html, css 자동완성 사용되도록 설정
+    사용자 설정파일 하단에 아래 코드를 삽입
+    {    
+        // jsp 확장자 사용가능 설정(JSP구문 색상구분 변경지원)        
+        "files.associations": { "*.jsp": "jsp" } ,
+        // 에밋 자동완성을 jsp에서도 html자동완성 사용설정
+        "emmet.includeLanguages": { "jsp": "html" },
+        "emmet.triggerExpansionOnTab": true
+    }
+
+ 
+[5. 포트 충돌의 피하기 위한 설정]
+    xampp 컨트롤 패널에서...
+
+    (1) 아파치서버 포트변경
+    httpd.conf
+    Listen 80 -> Listen 8088 (실제포트 변경임)
+
+    (2) Config버튼 -> Service and Port Settings 버튼 -> appache탭
+    Main Port 80 -> 8088 (mySQL admin버튼 클릭시 띄워줄 포트설정임)
+
+    (mySQL 포트는 변경하지 않는다)
+
