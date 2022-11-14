@@ -1,4 +1,4 @@
-package fruitPack.usa;
+package fruitPack.america;
 
 public class AmericaFruit {
     public void usaFn() {

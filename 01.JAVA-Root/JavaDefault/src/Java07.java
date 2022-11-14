@@ -1,8 +1,8 @@
 // Java07. 클래스와 객체 그리고 속성과 메서드
 // 클래스명과 동일한 이름의 파일에는 단 하나의 public 클래스를 가질 수 있다
 // 다른 클래스를 한 파일에 만들경우 public 접근자가 없는 default 클래스를 만든다
-import fruitPack.korea.KoreaFruit;
-import fruitPack.usa.AmericaFruit;;
+import fruitPack.america.AmericaFruit;
+import fruitPack.asia.KoreaFruit;;
 public class Java07 {
     public static void main(String[] args) {
         // 객체 지향 프로그래밍은 데이터와 메서드를 모두 포함하는 객체를 만드는 것
