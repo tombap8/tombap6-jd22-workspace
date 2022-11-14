@@ -85,7 +85,7 @@ public class Java06 {
         j06.makeTitle(99.999));
 
         // 재귀호출함수
-        sum(10);
+        System.out.println(sum(10));
 
     } //// main 메서드 ////
     
@@ -139,7 +139,6 @@ public class Java06 {
             System.out.print(k+(k==1?"=":"+"));
           return k + sum(k - 1);
         } else {
-            System.out.println(k);
           return k;
         }
     }
