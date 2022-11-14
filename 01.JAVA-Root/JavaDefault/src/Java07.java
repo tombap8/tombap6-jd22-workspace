@@ -16,6 +16,11 @@ public class Java07 {
 
 class Fruits {
     public void fruitsFn() {
+        String name="과일";
+        String color="각종색";
+        String favor="각종향";
+        double weight=0.0;
+        String define="나무 따위를 가꾸어 얻는, 사람이 먹을 수 있는 열매";
         System.out.println("나는 과일입니다!");
     }
 }
