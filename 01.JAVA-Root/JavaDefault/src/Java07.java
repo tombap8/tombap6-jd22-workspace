@@ -16,7 +16,7 @@ public class Java07 {
         banana.bananaFn("커다란");
 
         Fruits fruits = new Fruits("딸기", "빨간색", "상큼한향", 0.5);
-        fruits.fruitsFn();
+        // fruits.fruitsFn();
         fruits.defineFruit();
 
         // 값의 수정
@@ -42,7 +42,7 @@ class Fruits {
     String color;
     String favor;
     double weight;
-    final static String define = "나무 따위를 가꾸어 얻는, 사람이 먹을 수 있는 열매";
+    final String define = "나무 따위를 가꾸어 얻는, 사람이 먹을 수 있는 열매";
 
     // [생성자] 
     // 1.클래스명과 동일한 이름의 메서드(안만들어도 생긴다!)
@@ -52,6 +52,7 @@ class Fruits {
         this.color = color;
         this.favor = favor;
         this.weight = weight;
+        fruitsFn();
     }
 
     // 메서드 - 클래스안에 정의된 함수
