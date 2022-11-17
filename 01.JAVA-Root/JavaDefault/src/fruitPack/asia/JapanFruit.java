@@ -1,4 +1,4 @@
-package fruitPack.asia;
+package fruitpack.asia;
 
 // import fruitPack.america.south.PeruFruit;
 

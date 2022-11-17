@@ -1,4 +1,4 @@
-package fruitPack.america.south;
+package fruitpack.america.south;
 
 public class ChileFruit {
     public void chileFn(){

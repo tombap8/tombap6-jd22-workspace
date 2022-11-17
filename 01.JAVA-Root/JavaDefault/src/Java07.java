@@ -2,10 +2,10 @@
 // Java07. 클래스와 객체 그리고 속성과 메서드
 // 클래스명과 동일한 이름의 파일에는 단 하나의 public 클래스를 가질 수 있다
 // 다른 클래스를 한 파일에 만들경우 public 접근자가 없는 default 클래스를 만든다
-import fruitPack.america.north.UsaFruit;
-import fruitPack.america.south.PeruFruit;
-import fruitPack.asia.JapanFruit;
-import fruitPack.asia.KoreaFruit;;
+import fruitpack.america.north.UsaFruit;
+import fruitpack.america.south.PeruFruit;
+import fruitpack.asia.JapanFruit;
+import fruitpack.asia.KoreaFruit;;
 
 public class Java07 {
     public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class Java07 {
         // 직접 셋팅할 수 없다!!!
         // fruits.price = 8000;
         fruits.setPrice(8000);
-        System.err.println(fruits.name+"의 가격은 "+fruits.getPrice()+"원 입니다.");
+        System.err.println(fruits.name + "의 가격은 " + fruits.getPrice() + "원 입니다.");
 
         // 팩키지 호출
 
@@ -63,11 +63,46 @@ class Fruits {
     double weight;
     final String define = "나무 따위를 가꾸어 얻는, 사람이 먹을 수 있는 열매";
 
+    private String mycode;
+
     // private 변수를 셋팅하는법
     private int price;
-    // 겟터 : 프라이빗 변수값을 가져감
-    // 셋터 : 프라이빗 변수값을 할당함
+    /******************************************* 
+        [ 겟터(Getter)와 셋터(Setter) ]
 
+        {★ 게터(Getter)}
+
+        1.필드값 반환
+        2.접근 제어 수식어 : public
+        3.게터명 : get필드명 
+                (필드명의 첫글자는 대문자)
+        4.매개변수 없음
+        5.내용 : return 필드
+
+        {★ 세터(Setter)}
+
+        1.필드 초기화
+        2.접근 제어 수식어 : (거의) public
+        3.반환자료형 : void (반환값 X)
+        4.세터명 : set필드명 
+                (필드명의 첫글자는 대문자)
+        5.매개변수 : 필드와 동일
+        6.내용 : 생성자와 동일 
+                (this.필드명 = 매개변수명;)
+
+        ***************************************
+
+        [♣ 이클립스의 겟터/셋터 자동생성하기]
+        마우스 우클릭 > Source 
+        > Generate Getters and Setters... 메뉴 선택
+
+        [♣ VSCODE의 겟터/셋터 자동생성하기]
+        -> 확장프로그램 설치 : getter-setter-generator
+        -> 설치 후 F1 -> 입력창에 get입력후 
+        -> Generate get and set methods 선택함
+        -> 겟터/셋터 자동생성됨!
+
+    *******************************************/
     // Getter
     public int getPrice() {
         return price;

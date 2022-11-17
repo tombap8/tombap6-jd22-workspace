@@ -1,6 +1,6 @@
-package fruitPack.asia;
+package fruitpack.asia;
 
-import fruitPack.america.south.PeruFruit;
+import fruitpack.america.south.PeruFruit;
 
 public class KoreaFruit extends PeruFruit { // 페루의 서브클래스가 됨!
     public void koreaFn() {

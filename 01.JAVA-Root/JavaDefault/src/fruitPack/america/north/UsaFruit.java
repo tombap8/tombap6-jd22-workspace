@@ -1,4 +1,4 @@
-package fruitPack.america.north;
+package fruitpack.america.north;
 
 public class UsaFruit {
     public void usaFn() {
