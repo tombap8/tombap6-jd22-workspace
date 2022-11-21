@@ -11,3 +11,4 @@ public class KoreaFruit extends PeruFruit { // 페루의 서브클래스가 됨!
         super.peruFnProtected();
     }
 }
+

@@ -5,7 +5,7 @@
 import fruitpack.america.north.UsaFruit;
 import fruitpack.america.south.PeruFruit;
 import fruitpack.asia.JapanFruit;
-import fruitpack.asia.KoreaFruit;;
+import fruitpack.asia.KoreaFruit;
 
 public class Java07 {
     public static void main(String[] args) {
@@ -62,8 +62,6 @@ class Fruits {
     String favor;
     double weight;
     final String define = "나무 따위를 가꾸어 얻는, 사람이 먹을 수 있는 열매";
-
-    private String mycode;
 
     // private 변수를 셋팅하는법
     private int price;
