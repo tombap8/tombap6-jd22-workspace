@@ -1,6 +1,7 @@
 public class Java08{
     public static void main(String[] args) {
-        
+        Pig pig = new Pig();
+        pig.makePig();
     } /// main ///
 } /// class ///
 
@@ -12,13 +13,14 @@ class Animal{
 }
 
 class Pig extends Animal{
-    private String weight = "80kg";
+    String weight = "80kg";
     public void makePig() {
-        Animal animal = new Animal();
+        // Animal animal = new Animal();
+        // String original = animal.sound("꿀꿀");
 
-        String original = animal.sound("꿀꿀");
-        animal.name = "돼지";
+        String pigSound = super.sound("꿀꿀");
+        super.name = "돼지";
 
-        System.out.println(animal.name+":"+original);
+        System.out.println(super.name+":"+pigSound);
     }
 }
